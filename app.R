@@ -3,17 +3,11 @@ library(tidyverse)
 library(DT)
 library(extrafont)
 
-# Pre-processing ----------------------------
+fuentes <- read.csv("fuentes-info.csv", fileEncoding = 'UTF-8')
 
-# Read in csv file of resources compiled by me
-fuentes <- read_csv("fuentes-info.csv")
-
-# Create string for hyperlinks
 fuentes_table <- fuentes %>%
-  mutate(title_link =  paste0("<a href='",link,"' target='_blank'>",título,"</a>")) %>%
-  select(title_link, everything(), -título, -link)
-
-# UI -------------------------------
+  mutate(title_link =  paste0("<a href='",link,"' target='_blank'>",titulo,"</a>")) %>%
+  select(title_link, everything(), -titulo, -link)
 
 ui <- fluidPage(
   # formatting with css
@@ -47,8 +41,6 @@ ui <- fluidPage(
 
 
 
-# Server -------------------------------
-
 server <- function(input, output) {
   
   # render DT table
@@ -67,7 +59,6 @@ server <- function(input, output) {
   
 }
 
-# Run the application
-
+# Run
 shinyApp(ui = ui, server = server)
 

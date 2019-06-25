@@ -1,0 +1,12 @@
+name: fuentes-sectoreditorial
+title: fuentes-sectoreditorial
+username:
+account: bynans
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 996345
+bundleId: 2175705
+url: https://bynans.shinyapps.io/fuentes-sectoreditorial/
+when: 1561417215.43017
+asMultiple: FALSE
+asStatic: FALSE
